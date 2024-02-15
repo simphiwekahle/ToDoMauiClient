@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using ToDoMauiClient.DataServices;
 
 namespace ToDoMauiClient
 {
@@ -18,6 +19,7 @@ namespace ToDoMauiClient
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+            builder.Services.AddSingleton<IRestDataService, RestDataService>();
 
             return builder.Build();
         }
