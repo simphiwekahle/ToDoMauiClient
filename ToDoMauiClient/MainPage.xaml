@@ -4,13 +4,19 @@
              x:Class="ToDoMauiClient.MainPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add To Do" Clicked="OnAddToDoClicked" />
-        
+        <ToolbarItem Text="Add To Do" 
+                     Clicked="OnAddToDoClicked" />
     </ContentPage.ToolbarItems>
 
     <CollectionView x:Name="collectionView"
                     SelectionMode="Single"
-                    SelectionChanged="OnSelectionChanged">
+                    SelectionChanged="OnSelectionChanged"
+                    Margin="30,0,30,0">
+                    <!--left,top,right,bottom-->
+
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+        </CollectionView.ItemsLayout>
         <CollectionView.ItemTemplate>
             <DataTemplate>
                 <Label Text="{Binding ToDoName}" FontSize="Medium" />
