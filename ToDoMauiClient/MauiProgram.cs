@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using ToDoMauiClient.DataServices;
+using ToDoMauiClient.Pages;
 
 namespace ToDoMauiClient
 {
@@ -21,6 +22,7 @@ namespace ToDoMauiClient
 #endif
             builder.Services.AddSingleton<IRestDataService, RestDataService>();
             builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddTransient<ManageToDoPage>();
 
             return builder.Build();
         }
